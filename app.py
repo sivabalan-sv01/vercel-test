@@ -1,11 +1,14 @@
 from fastapi import FastAPI, BackgroundTasks, Request, Form
 from fastapi.responses import FileResponse, HTMLResponse
+import os
 
 app = FastAPI()
 
 @app.get("/")
 async def read_index():
-    return FileResponse("index.html")
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    index_path = os.path.join(base_dir, "index.html")
+    return FileResponse(index_path)
 
 # Example background task function
 def background_process(data: str):
