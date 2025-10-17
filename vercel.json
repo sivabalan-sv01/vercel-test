@@ -1,7 +1,8 @@
 {
   "functions": {
     "app.py": {
-      "runtime": "python3.11"
+      "runtime": "python3.11",
+      "includeFiles": ["index.html"]
     }
   },
   "builds": [
